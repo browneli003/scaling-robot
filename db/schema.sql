@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS scaling_robot_db;
+DROP DATABASE IF EXISTS scalingrobot_db;
 
-CREATE DATABASE scaling_robot_db;
+CREATE DATABASE scalingrobot_db;
