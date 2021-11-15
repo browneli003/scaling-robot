@@ -1,18 +1,24 @@
-    <div class="col-12 col-md-4 card card-body">
-        <a href="/dashboard/create/"><button id="create-post language-buttons" class="btn">create post</button></a>
-        
-        <h2 class="subtitle">dashboard: your posts</h2><hr>
-{{#if posts.length}}
-    </div>
+<a href="/dashboard" class="go-back"> &larr; Back to dashboard</a>
 
-    {{#each posts as |post|}}
-        {{> post-info post}}
-        
-            <a href="/dashboard/edit/{{post.id}}"><button class="button mb-5 ml-5 is-warning">edit post</button></a>
+<article class="new-page">
+    <section class="new-form-page">
+        <div class="form-heading">
+            <h2>Create New Blog Post</h2>
         </div>
-    {{/each}}
+        <div class="form-section">
+            <form class="new-post-form">
+                <div class="post-title-section">
+                    <label for="post-title">Title</label>
+                    <input type="text" id="post-title" name="post-title" />
+                </div>
+                <div class="post-content">
+                    <label for="post-content">Content</label>
+                    <textarea class="entry-field" id="post-content" name="post-content"></textarea>
+                </div>
+                <button type="submit" class="btn">Create</button>
+            </form>
+        </div>
+    </section>
+</article>
 
-{{else}}
-<h6 class="list-group">you do not currently have any posts</h6>
-
-{{/if}}
+<script src="/javascript/add-post.js"></script>
