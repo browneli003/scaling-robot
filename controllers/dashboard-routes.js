@@ -16,7 +16,7 @@ router.get('/', withAuth, (req, res) => {
     attributes: [
       'id',
       'title',
-      'content',
+      'post_content',
       'created_at'
     ],
     include: [{
@@ -56,7 +56,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
     attributes: [
       'id',
       'title',
-      'content',
+      'post_content',
       'created_at'
     ],
     include: [{
@@ -87,7 +87,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
 
       res.render('edit-post', {
         post,
-        loggedIn: true
+        loggedIn: req.session.loggedIn
       });
     })
     .catch(err => {
@@ -96,10 +96,6 @@ router.get('/edit/:id', withAuth, (req, res) => {
     });
 })
 
-router.get('/new', (req, res) => {
-  res.render('add-post', {
-    loggedIn: true
-  })
-})
+
 
 module.exports = router;
